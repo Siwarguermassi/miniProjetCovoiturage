@@ -1,0 +1,98 @@
+html, body, h1, form, fieldset, input
+{
+margin: 0; padding: 0; 
+
+}
+body{
+   
+  background-color: 	#C0C0C0;
+}
+h2{
+    color: #DB7093;
+font-weight: bold;
+font-size:50px;
+margin-bottom: 30px;
+}
+
+form {
+   padding-top: 100px;
+    color: #fff;
+    background: #A9A9A9	;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(60,60,60)),
+        color-stop(0.74, rgb(43,43,43)),
+        color-stop(1, rgb(60,60,60))
+        );
+     background: -moz-linear-gradient(
+        center bottom,
+        rgb(60,60,60) 0%,
+        rgb(43,43,43) 74%,
+        rgb(60,60,60) 100%
+        );
+     -moz-border-radius: 10px;
+     -webkit-border-radius: 10px;
+     border-radius: 10px;
+     margin: 10px;
+     width: 830px;
+     height: 430px;
+     }
+ 
+
+#registration fieldset {
+      padding: 20px;
+      }
+      label{
+color: #FFB6C1; 
+font-weight: bold ;
+}
+h1{
+    color: #DB7093;
+font-weight: bold;
+font-size:50px;
+margin-bottom: 30px;
+}
+ label { 
+	width: 250px;
+	float:left;
+       
+
+}
+input{
+    width: 250px;
+    border-radius:12px 0 12px 0;
+    box-shadow:1px 1px 3px #999;
+    font-weight: bold ;
+    margin-bottom: 5px;
+    
+}
+
+div input{
+    padding: 10px;
+    /*padding_top:10px;
+    padding-bottom: 10px;*/
+    margin-top: 15px;
+     cursor: pointer;
+      color: #000000;
+      background-color: #808080;
+      font-weight: bold ;
+      font-size: 15px;
+}
+div input:hover{
+    background: #FFB6C1;
+}
+a:hover {
+background-color: #E9967A;	
+color: green;
+}
+a:active /* Quand le visiteur clique sur le lien */ {
+background-color: #FFCC66;
+}
+a {
+
+color: #FFC0CB; /* Les liens seront en rouge au lieu de bleu */
+font-size:24px }
+
+	

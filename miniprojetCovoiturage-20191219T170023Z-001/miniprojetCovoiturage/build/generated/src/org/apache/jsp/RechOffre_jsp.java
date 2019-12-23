@@ -1,0 +1,271 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import Beans.offreCov;
+import java.util.ArrayList;
+
+public final class RechOffre_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write(" <head>\n");
+      out.write("     <link href=\"cssBib.css\" rel=\"stylesheet\">\n");
+      out.write(" <title>MAP</title>\n");
+      out.write(" <meta charset=\"utf8\" />\n");
+      out.write(" <script type=\"text/javascript\" src=\"http://maps.google.com/maps/api/js?&key=AIzaSyC7AOdnEdlcKT-ERg_qn_u8UrSDvn1cpVs&libraries=places\"></script>\n");
+      out.write(" <style type=\"text/css\">\n");
+      out.write("html, body {\n");
+      out.write(" width: 100%;\n");
+      out.write(" height: 100%;\n");
+      out.write("}\n");
+      out.write("body {\n");
+      out.write(" margin: 0;\n");
+      out.write(" position: relative;\n");
+      out.write("}\n");
+      out.write("#maps {\n");
+      out.write("\tmargin-top: 50px;\n");
+      out.write(" margin-left: 100px;\n");
+      out.write(" width: 80%;\n");
+      out.write(" height: 70%; \n");
+      out.write(" position: absolute;\n");
+      out.write(" left: 0;\n");
+      out.write(" top: 0;\n");
+      out.write("}\n");
+      out.write("#search{\n");
+      out.write("    margin-top: 20px;\n");
+      out.write(" margin-left: 100px;\n");
+      out.write(" width: 80%;\n");
+      out.write(" height: 100%; \n");
+      out.write("    \n");
+      out.write("}\n");
+      out.write("#steps {\n");
+      out.write("  width: 280px;\n");
+      out.write("  height: 400px;\n");
+      out.write("  position: absolute;\n");
+      out.write("  right: 24px;\n");
+      out.write("  top: 24px;\n");
+      out.write("  background-color: #FFFFFF;\n");
+      out.write("  border-radius: 8px;\n");
+      out.write("  box-shadow: 0 0 16px #C0C0C0;\n");
+      out.write("  padding: 10px;\n");
+      out.write("  overflow: auto;\n");
+      out.write("}\n");
+      out.write(" </style>\n");
+      out.write(" <script type=\"text/javascript\">\n");
+      out.write("\n");
+      out.write("var objLocation, objMaps, objCurrentLocationMarker, objInfoWindow, objService ,objDirection;\n");
+      out.write("\n");
+      out.write("if (navigator.geolocation) {\n");
+      out.write(" navigator.geolocation.getCurrentPosition(function(position) {\n");
+      out.write(" objLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);\n");
+      out.write(" objMaps = new google.maps.Map(document.querySelector(\"#maps\"), {\n");
+      out.write(" zoom: 16, \n");
+      out.write(" center: objLocation, \n");
+      out.write(" mapTypeControl: false,\n");
+      out.write(" scaleControl: false,\n");
+      out.write(" streetViewControl: false,\n");
+      out.write(" overviewMapControl: false,\n");
+      out.write(" zoomControl: true,\n");
+      out.write(" navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },\n");
+      out.write(" mapTypeId: google.maps.MapTypeId.ROADMAP\n");
+      out.write(" });\n");
+      out.write(" \n");
+      out.write(" objCurrentLocationMarker = new google.maps.Marker({\n");
+      out.write(" position: objLocation,\n");
+      out.write(" map: objMaps,\n");
+      out.write(" title: \"Vous êtes ici !\" \n");
+      out.write(" });\n");
+      out.write(" google.maps.event.addListener(objCurrentLocationMarker, 'click', function() {\n");
+      out.write(" objInfoWindow.setContent(\"Vous êtes ici !\");\n");
+      out.write(" objInfoWindow.open(objMaps, this);\n");
+      out.write(" });\n");
+      out.write("\n");
+      out.write(" objInfoWindow = new google.maps.InfoWindow();\n");
+      out.write(" objService = new google.maps.places.PlacesService(objMaps);\n");
+      out.write(" objDirection = new google.maps.DirectionsRenderer({\n");
+      out.write("  map: objMaps,\n");
+      out.write("  panel: document.getElementById(\"steps\")\n");
+      out.write("});\n");
+      out.write("\n");
+      out.write(" google.maps.event.addListenerOnce(objMaps, 'bounds_changed', doSearch);\n");
+      out.write("doSearch();\n");
+      out.write("\n");
+      out.write(" }, function(msg) {\n");
+      out.write(" alert(\"Erreur : \" + msg);\n");
+      out.write(" });\n");
+      out.write("}\n");
+      out.write("function doSearch() {\n");
+      out.write("    objService.nearbySearch({\n");
+      out.write("        location: objLocation,\n");
+      out.write("        radius: 1000,\n");
+      out.write("        types: ['Entreprise','Buisness','Société']\n");
+      out.write("    }, function(results, status) {\n");
+      out.write("        if (status == google.maps.places.PlacesServiceStatus.OK) {\n");
+      out.write("            for (var i = 0; i < results.length; i++) {\n");
+      out.write("                createMarker(results[i]);\n");
+      out.write("            }       \n");
+      out.write("        } \n");
+      out.write("    });\n");
+      out.write("}\n");
+      out.write("function createMarker(objPlace) {\n");
+      out.write("    if (objPlace.types[0] !== \"Entreprise\" && objPlace.types[0] !== \"Buisness\" &&\n");
+      out.write("        objPlace.types[0] !== \"Société\") {\n");
+      out.write("        return;   \n");
+      out.write("    }\n");
+      out.write("    \n");
+      out.write("    var objMarker = new google.maps.Marker({\n");
+      out.write("        position: objPlace.geometry.location,\n");
+      out.write("        map: objMaps,\n");
+      out.write("        icon: \"http://www.google.com/mapfiles/ms/micons/purple-dot.png\",\n");
+      out.write("        title: objPlace.name\n");
+      out.write("    });\n");
+      out.write("\n");
+      out.write("    google.maps.event.addListener(objMarker, 'load', function() {\n");
+      out.write("       var strHTML = \"<b>\" + objPlace.name + \"</b><br />\";\n");
+      out.write("        if (objPlace.types[0] == \"bar\") {\n");
+      out.write("            strHTML += \"Bistrot\";\n");
+      out.write("        } else if (objPlace.types[0] == \"cafe\") {\n");
+      out.write("            strHTML += \"Café\";\n");
+      out.write("        } else if (objPlace.types[0] == \"restaurant\") {\n");
+      out.write("            strHTML += \"Resto\";      \n");
+      out.write("        } else {\n");
+      out.write("            strHTML += \"Inconnu (\" + objPlace.types[0] + \")\";   \n");
+      out.write("        }\n");
+      out.write("        \n");
+      out.write("        objInfoWindow.setContent(strHTML);\n");
+      out.write("        objInfoWindow.open(objMaps, this);\n");
+      out.write("        \n");
+      out.write("        document.getElementById(\"steps\").style.display = 'block';\n");
+      out.write("  var objDirectionService = new google.maps.DirectionsService();\n");
+      out.write("  objDirectionService.route({\n");
+      out.write("    origin: objLocation,\n");
+      out.write("    destination: objPlace.geometry.location,\n");
+      out.write("    travelMode: google.maps.DirectionsTravelMode.DRIVING\n");
+      out.write("  }, function(response, status) {\n");
+      out.write("    if (google.maps.DirectionsStatus.OK) {\n");
+      out.write("      objDirection.setDirections(response);\n");
+      out.write("    }\n");
+      out.write("  });\n");
+      out.write("    }); \n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("}\n");
+      out.write("var map,infowindow;\n");
+      out.write("    function initialize() {\n");
+      out.write("       var option ={\n");
+      out.write("        zoom: 19,\n");
+      out.write("        center: {lat :36.806496, lng :10.181532},\n");
+      out.write("        mapTypeId: google.maps.MapTypeId.ROADMAP\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("      };\n");
+      out.write("  map = new google.maps.Map(document.getElementById(\"maps\"),option);\n");
+      out.write("  \tvar input = document.getElementById('search');\n");
+      out.write("  \tvar searchbox = new google.maps.places.SearchBox(input);\n");
+      out.write("  \tmap.addListener('bounds_changed',function(){\n");
+      out.write("  \t\tsearchbox.setBounds(map.getBounds());\n");
+      out.write("  \t});\n");
+      out.write("  \tvar markers=[];\n");
+      out.write("  \tsearchbox.addListener('places_changes',function(){\n");
+      out.write("  \t\tvar places = searchbox.getPlaces();\n");
+      out.write("  \t\tif(places.length ===0)\n");
+      out.write("  \t\t\treturn;\n");
+      out.write("  \t\t\tmarkers.foreach(function(m){m.setMap(null);});\n");
+      out.write("  \t\t\tmarkers =[];\n");
+      out.write("  \t\t\tvar bounds = new google.maps.LatLngBounds();\n");
+      out.write("  \t\t\tplaces.foreach(function(p){\n");
+      out.write("  \t\t\t\tif(!p.geometry){\n");
+      out.write("  \t\t\t\t\treturn;\n");
+      out.write("  \t\t\t\t}\n");
+      out.write("  \t\t\t\tmarkers.push(new google.maps.Marker({\n");
+      out.write("  \t\t\t\t\tmap : map,\n");
+      out.write("  \t\t\t\t\ttitle : p.name,\n");
+      out.write("  \t\t\t\t\tposition : p.geometry.location\n");
+      out.write("  \t\t\t\t}));\n");
+      out.write("  \t\t\t\tif(p.geometry.viewport)\n");
+      out.write("  \t\t\t\t\tbounds.union(p.geometry.viewport);\n");
+      out.write("  \t\t\t\telse\n");
+      out.write("  \t\t\t\t\tbounds.extends(p.geometry.viewport);\n");
+      out.write("  \t\t\t});\n");
+      out.write("\n");
+      out.write("  \t\tmap.fitBounds(bounds);\n");
+      out.write("  \t});\n");
+      out.write("      \n");
+      out.write("      var marker = new google.maps.Marker({\n");
+      out.write("\t\n");
+      out.write("\tposition: {lat: lat, lng: lon},\n");
+      out.write("\n");
+      out.write("\tmap: map\n");
+      out.write("});\n");
+      out.write("\t}\n");
+      out.write(" </script>\n");
+      out.write(" \n");
+      out.write(" </head>\n");
+      out.write(" <body onload=\"initialize()\">\n");
+      out.write("  <div class=\"coll\">\n");
+      out.write("    \t<input class=\"form-control\" id=\"search\" type=\"text\"  placeholder=\"search...\" /><br><br>\n");
+      out.write("        \n");
+      out.write("    </div>\t\n");
+      out.write(" <div id=\"maps\"></div>\n");
+      out.write(" <div id=\"steps\" style=\"display: none;\"></div>\n");
+      out.write(" \n");
+      out.write(" \n");
+      out.write(" </body>\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
